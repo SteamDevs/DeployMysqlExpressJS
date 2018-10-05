@@ -1,0 +1,726 @@
+{
+	"info": {
+		"_postman_id": "45acc54b-b999-4969-acfc-02373197cb4d",
+		"name": "ElBus-NodeAPI",
+		"description": "Coleccion de End-Points para API ElBus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Card: Insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigo_raspable",
+							"value": "010101",
+							"type": "text"
+						},
+						{
+							"key": "codigo_barra",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "activo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_colegio",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "id_hijo",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/cards",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cards"
+					]
+				},
+				"description": "End-Point: localhost:3000/api/v1/cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Card: Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/cards",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cards"
+					]
+				},
+				"description": "End-Point: localhost:3000/api/v1/cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Card: Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/cards/20",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						"20"
+					]
+				},
+				"description": "End-Point: localhost:3000/api/v1/cards/20"
+			},
+			"response": []
+		},
+		{
+			"name": "Login Card (edit)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "codigo_raspable",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "codgio_barra",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/cards/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						"auth",
+						"login"
+					]
+				},
+				"description": "End-Point localhost:3000/api/v1/cards/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Parent : Get-Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/cards/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"cards",
+						""
+					]
+				},
+				"description": "Este End-Point obtiene los datos del padre segun su configuracion: \n\nlocalhost:3000/api/v1/parents/4"
+			},
+			"response": []
+		},
+		{
+			"name": "Parent: Post-Info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "primer_nombre",
+							"value": "Jaime",
+							"type": "text"
+						},
+						{
+							"key": "segundo_nombre",
+							"value": "Armando",
+							"type": "text"
+						},
+						{
+							"key": "primer_apellido",
+							"value": "Garcia",
+							"type": "text"
+						},
+						{
+							"key": "segundo_apellido",
+							"value": "Pec",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "zona 7 de Guatemala",
+							"type": "text"
+						},
+						{
+							"key": "telefono",
+							"value": "24681012",
+							"type": "text"
+						},
+						{
+							"key": "correro",
+							"value": "corvuz@hotmail.com",
+							"type": "text"
+						},
+						{
+							"key": "pass",
+							"value": "123435",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/parents/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"parents",
+						""
+					]
+				},
+				"description": "Este End-Point Inserta una configuracion de padre\n\nlocalhost:3000/api/v1/parents/"
+			},
+			"response": []
+		},
+		{
+			"name": "Padres: Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hijo: POST",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "primer_nombre",
+							"value": "Jorge",
+							"type": "text"
+						},
+						{
+							"key": "segundo_nombre",
+							"value": "Antonio",
+							"type": "text"
+						},
+						{
+							"key": "primer_apellido",
+							"value": "Sanchez",
+							"type": "text"
+						},
+						{
+							"key": "segundo_apellido",
+							"value": "Galvez",
+							"type": "text"
+						},
+						{
+							"key": "grado",
+							"value": "4to perito",
+							"type": "text"
+						},
+						{
+							"key": "direccio_donde_vive",
+							"value": "zona 11 de mixco",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/students",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"students"
+					]
+				},
+				"description": "Este End-Point Inserta la informacion de un Student o Hijo\n\nlocalhost:3000/api/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "Hijo: GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/students",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"students"
+					]
+				},
+				"description": "Este End-Point Obtiene todos los Students \n\nlocalhost:3000/api/v1/students"
+			},
+			"response": []
+		},
+		{
+			"name": "Geo: Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/geo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"geo"
+					]
+				},
+				"description": "Este End-Point Obtiene toda la data\nlocalhost:3000/api/v1/geo"
+			},
+			"response": []
+		},
+		{
+			"name": "GEO: Insert",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "latitud",
+							"value": "14.6221981",
+							"type": "text"
+						},
+						{
+							"key": "longitud",
+							"value": "-90.504926",
+							"type": "text"
+						},
+						{
+							"key": "rumbo",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "nivel_bateria",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "velocidad_promedio",
+							"value": "13.33",
+							"type": "text"
+						},
+						{
+							"key": "acurrency",
+							"value": "7.8",
+							"type": "text"
+						},
+						{
+							"key": "distancia_puntos",
+							"value": "23.7",
+							"type": "text"
+						},
+						{
+							"key": "uid",
+							"value": "123abcXYZ",
+							"type": "text"
+						},
+						{
+							"key": "datos_consumidos",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/geo",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"geo"
+					]
+				},
+				"description": "Este End-Point Inserta una nueva coordenada\n\nlocalhost:3000/api/v1/geo"
+			},
+			"response": []
+		},
+		{
+			"name": "LogApp: Obtener Todos los Usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/loginapp",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loginapp"
+					]
+				},
+				"description": "Este End-Point Obtiene todos los usuarios del app \n\nlocalhost:3000/api/v1/loginapp"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth : PIN Validacion con pin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "pin",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/loginapp/pin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loginapp",
+						"pin"
+					]
+				},
+				"description": "Este End-Point Valida si el pin es correcto\n(Con esto podremos acceder al APP con nick y pass)\n\nlocalhost:3000/api/v1/loginapp/pin"
+			},
+			"response": []
+		},
+		{
+			"name": "Auth: LoginAPP Validar el usuario del app GPS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "usuario",
+							"value": "pablo",
+							"type": "text"
+						},
+						{
+							"key": "pass",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/loginapp/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loginapp",
+						"auth"
+					]
+				},
+				"description": "Este End-Point\nlocalhost:3000/api/v1/loginapp/auth"
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitud_parada:  Obtener todas las ( solicitudes paradas )",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:26109/api/v1/solicitud_parada",
+					"host": [
+						"localhost"
+					],
+					"port": "26109",
+					"path": [
+						"api",
+						"v1",
+						"solicitud_parada"
+					]
+				},
+				"description": "Con este End-Point Podemos solicitar la parada en donde el padre solicite, esta listara los datos\n\nhttp://localhost:3000/api/v1/solicitud_parada"
+			},
+			"response": []
+		},
+		{
+			"name": "DEMO (Solo Demostrativo )",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Mayling",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "sanchez",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/parents/demo/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"parents",
+						"demo",
+						""
+					]
+				},
+				"description": "ESTE END-POINT SOLO FUE UN DEMO\n\nlocalhost:3000/api/v1/parents/demo/"
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitud_parada: Actualizar una solicitud de parada",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "latitud",
+							"value": "14.141414",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "longitud",
+							"value": "-15.111111",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "actualizado desde postman",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/solicitud_parada/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"solicitud_parada",
+						"2"
+					]
+				},
+				"description": "Este End-Point Debe de actualizar una solicitud de parada\nlocalhost:3000/api/v1/solicitud_parada/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitud_parada: Insertar una nueva solicitud",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "latitud",
+							"value": "11.0000",
+							"type": "text"
+						},
+						{
+							"key": "longitud",
+							"value": "-14.000",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "xdsxdxd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/solicitud_parada/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"solicitud_parada",
+						""
+					]
+				},
+				"description": "Este End-Point Guarda la informacion de un nuevo punto de parada solicitado\n\nlocalhost:3000/api/v1/solicitud_parada/"
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitud_parada: Eliminar una Solicitud de parada",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/api/v1/solicitud_parada/8",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"solicitud_parada",
+						"8"
+					]
+				},
+				"description": "Este End-Point Elimina un registro\n\nlocalhost:3000/api/v1/solicitud_parada/8"
+			},
+			"response": []
+		}
+	]
+}
