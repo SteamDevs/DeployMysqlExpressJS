@@ -1,9 +1,32 @@
 const mysql = require('mysql');
 
-let chain = { host: 'localhost', user: 'root', password: '', database: 'ukload'}
+var chain = { host: 'localhost', user: 'root', password: '', database: 'ukload'}
 
-let chainRemote = { host: '10.123.0.68', user: 'guateweb4_dep', password: '306wuupa307', database: 'guateweb4_dep' }
+var chainRemote = { host: '10.123.0.68', user: 'guateweb4_dep', password: '306wuupa307', database: 'guateweb4_dep' }
 
-let conexion = mysql.createConnection(chainRemote);
+// ============================
+//  Puerto
+// ============================
+process.env.PORT = process.env.PORT || 3000;
 
-module.exports = conexion;
+// ============================
+//  ENVIROMENT
+// ============================
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev'; 
+
+// ============================
+//  Base de datos
+// ============================
+let urlDB;
+
+if (process.env.NODE_ENV === 'dev') {
+    urlDB =  chain;
+} else {
+    urlDB = chainRemote;
+}
+
+process.env.URLDB = urlDB;
+
+let con = mysql.createConnection(urlDB);
+
+module.exports = con;

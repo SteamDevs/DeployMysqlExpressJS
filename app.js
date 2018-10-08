@@ -1,3 +1,4 @@
+require('./config');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -23,13 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 
-let PORT = 3000;
-
+//let PORT = 3000;
 
 //IP 46.249.204.26:26109/api/v1/parents/1
 
 app.use('/usex/endpoint', routeUser);
 
-app.listen(PORT, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log('BackEnd Online');
 });
