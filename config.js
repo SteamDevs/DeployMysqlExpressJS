@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 var chain = { host: 'localhost', user: 'root', password: '', database: 'ukload'}
 
-var chainRemote = { host: '10.5.10.28', user: 'guateweb4_dep', password: '306wuupa307', database: 'guateweb4_dep' }
+var chainRemote = { host: '181.174.101.155', user: 'guateweb4_dep', password: '306wuupa307', database: 'guateweb4_dep' }
 
 //10.123.0.68
 
