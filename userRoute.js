@@ -6,13 +6,13 @@ let us = require('./user');
 app.get('/', (req, res)=>{
     
     us.getData( (err, userDB)=>{
-        /*if (err){
-             res.status(400).json({
+        if (err){
+            return res.status(400).json({
                 ok: false,
                 message: 'Algo fallo',
                 errors: err
             });
-        }*/
+        }
 
         res.status(200).json({
             ok: true,
