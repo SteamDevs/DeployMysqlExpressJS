@@ -7,7 +7,7 @@ app.get('/', (req, res)=>{
     
     us.getData( (err, userDB)=>{
         if (err){
-            res.status(400).json({
+            return res.status(400).json({
                 ok: false,
                 message: 'Algo fallo',
                 errors: err
