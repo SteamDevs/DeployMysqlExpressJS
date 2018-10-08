@@ -1,11 +1,15 @@
 const mysql = require('mysql');
 
-var chain = {  connectionLimit : 100, host: 'localhost', user: 'root', password: '', database: 'ukload'}
+var chain = { host: 'localhost', user: 'root', password: '', database: 'ukload'}
 
-var chainRemote = {  connectionLimit : 100 , host: '10.123.0.68', user: 'guateweb4_dep', password: '306wuupa307', database: 'guateweb4_dep'}
+var chainRemote = { host: '10.123.0.68', user: 'guateweb4_dep', password: '306wuupa307', database: 'guateweb4_dep' }
+
+let con = mysql.createConnection(chainRemote);
+
+module.exports = con;
 
 //10.123.0.68
-
+/*
 // ============================
 //  Puerto
 // ============================
@@ -29,7 +33,6 @@ if (process.env.NODE_ENV === 'dev') {
 
 process.env.URLDB = urlDB;
 
-let con = mysql.createPool(urlDB);
+let con = mysql.createConnection(urlDB);
 
-
-module.exports = con;
+module.exports = con;*/
