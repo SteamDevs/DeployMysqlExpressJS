@@ -22,4 +22,25 @@ app.get('/', (req, res)=>{
     });
 });
 
+app.post('/', (req, res)=>{
+
+    let data = [req.body.nombre];
+
+    us.insertData(data, (err, newUserx)=>{
+        /*if(err){
+            return res.status(400).json({
+                ok: false,
+                message: 'ocurrio un error',
+                errors: err
+            });
+        };*/
+        
+        res.status(200).json({
+            ok:true,
+            message: 'consulta exitosa',
+            result: newUserx
+        });
+    });
+});
+
 module.exports = app;
