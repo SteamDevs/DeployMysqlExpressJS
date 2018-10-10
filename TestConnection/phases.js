@@ -43,11 +43,8 @@ handleDisconnect();
 
 app.get('/', (req, res)=> {
     connection.query('SELECT * from t_users', (err, rows, fields)=> {
-        if (err) {
-            console.log('error: ', err);
-            throw err;
-        }
-        res.send(['hola a todos desde siempre', rows]);
+       if(err) throw err; 
+        res.send(['consulta exitosa', rows]);
     });
 });
 
