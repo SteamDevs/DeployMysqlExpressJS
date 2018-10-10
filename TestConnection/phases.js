@@ -23,8 +23,8 @@ function handleDisconnect() {
     //Paso 2: un eror controlado
     connection.connect((err)=> {              	
         if (err) {                                    
-            console.log('Hubo un error en la base de datos', err);
-            setTimeout(handleDisconnect, 1000); 
+            setTimeout(handleDisconnect, 1000);
+            console.log('El tiempo se exedio'+ err) 
         }                                     
     });                                     	
 
