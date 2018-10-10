@@ -23,15 +23,15 @@ function handleDisconnect() {
     //Paso 2: un eror controlado
     connection.connect((err)=> {              	
         if (err) {                                    
-            console.log('Hubo un error en la base de datos', err);
-            setTimeout(handleDisconnect, 1000); 
+            setTimeout(handleDisconnect, 1000);
+            console.log('Error de DB', err); 
         }                                     
     });                                     	
 
     //Paso 3: Un error por un protocolo
     connection.on('error', (err)=> {
-        console.log('3. el eror es:  ', err);
         if (err.code === 'PROTOCOL_CONNECTION_LOST') { 	
+            console.log('3. el eror es:  ', err);
             handleDisconnect();                      	
         } else {                                      	
             throw err;                                  
@@ -43,10 +43,7 @@ handleDisconnect();
 
 app.get('/', (req, res)=> {
     connection.query('SELECT * from t_users', (err, rows, fields)=> {
-        if (err) {
-            console.log('error: ', err);
-            throw err;
-        }
+        if(err) throw err;
         res.send(['hola a todos desde siempre', rows]);
     });
 });
